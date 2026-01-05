@@ -329,7 +329,7 @@ const App = () => {
                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide ${currentMode === 'both' ? 'bg-indigo-100 text-indigo-700' : currentMode === 'sense' ? 'bg-blue-100 text-blue-700' : 'bg-purple-100 text-purple-700'}`}>
                   {currentMode} view
                 </span>
-                <span className="text-[10px] text-slate-400">v1.2</span>
+                <span className="text-[10px] text-slate-400">v1.0</span>
               </div>
             )}
           </div>

@@ -1,0 +1,23 @@
+##gff-version 3
+##sequence-region CP102233.1 1 14519861
+# Generated from HMMER hmmsearch results (digIS output)
+# Date: 2026-01-05
+CP102233.1	digIS	mobile_genetic_element	4587296	4588345	90.4	+	.	ID=WCQ90691.1;Name=IS1;Note=hypothetical protein;locus_tag=NQZ70_03402
+CP102233.1	digIS	mobile_genetic_element	5322883	5323932	90.4	-	.	ID=WCQ91194.1;Name=IS1;Note=hypothetical protein;locus_tag=NQZ70_03909
+CP102233.1	digIS	mobile_genetic_element	6313753	6314802	90.4	-	.	ID=WCQ91870.1;Name=IS1;Note=hypothetical protein;locus_tag=NQZ70_04597
+CP102233.1	digIS	mobile_genetic_element	10787262	10788311	90.4	+	.	ID=WCQ95177.1;Name=IS1;Note=hypothetical protein;locus_tag=NQZ70_07953
+CP102233.1	digIS	mobile_genetic_element	6316125	6316985	80.0	+	.	ID=WCQ91872.1;Name=IS1;Note=IS1 family transposase ISNisp5;locus_tag=NQZ70_04599
+CP102233.1	digIS	mobile_genetic_element	202460	203605	69.1	-	.	ID=WCQ87487.1;Name=IS1;Note=hypothetical protein;locus_tag=NQZ70_00150
+CP102233.1	digIS	mobile_genetic_element	3531051	3531473	78.4	+	.	ID=WCQ89916.1;Name=IS110;Note=IS110 family transposase ISAzo28;locus_tag=NQZ70_02614
+CP102233.1	digIS	mobile_genetic_element	12976552	12977790	74.8	-	.	ID=WCQ96799.1;Name=IS110;Note=IS110 family transposase ISAzo28;locus_tag=NQZ70_09586
+CP102233.1	digIS	mobile_genetic_element	287334	288572	74.8	-	.	ID=WCQ87561.1;Name=IS110;Note=IS110 family transposase ISAzo28;locus_tag=NQZ70_00224
+CP102233.1	digIS	mobile_genetic_element	317814	319052	74.8	+	.	ID=WCQ87587.1;Name=IS110;Note=IS110 family transposase ISAzo28;locus_tag=NQZ70_00250
+CP102233.1	digIS	mobile_genetic_element	3504617	3505855	74.8	-	.	ID=WCQ89896.1;Name=IS110;Note=IS110 family transposase ISAzo28;locus_tag=NQZ70_02594
+CP102233.1	digIS	mobile_genetic_element	263150	264739	130.6	-	.	ID=WCQ87539.1;Name=IS1182;Note=IS1182 family transposase ISStau8;locus_tag=NQZ70_00202
+CP102233.1	digIS	mobile_genetic_element	466666	468255	130.6	+	.	ID=WCQ87689.1;Name=IS1182;Note=IS1182 family transposase ISStau8;locus_tag=NQZ70_00352
+CP102233.1	digIS	mobile_genetic_element	708119	709708	130.6	+	.	ID=WCQ87868.1;Name=IS1182;Note=IS1182 family transposase ISStau8;locus_tag=NQZ70_00532
+CP102233.1	digIS	mobile_genetic_element	11007656	11009044	125.0	+	.	ID=WCQ95332.1;Name=IS1380;Note=transposase;locus_tag=NQZ70_08108
+CP102233.1	digIS	mobile_genetic_element	3274804	3276339	111.6	-	.	ID=WCQ89710.1;Name=IS21;Note=IS21 family transposase ISPpu7;locus_tag=NQZ70_02402
+CP102233.1	digIS	mobile_genetic_element	286415	287290	140.2	-	.	ID=WCQ87560.1;Name=IS3;Note=IS3 family transposase ISStau1;locus_tag=NQZ70_00223
+CP102233.1	digIS	mobile_genetic_element	14518422	14519861	46.6	+	.	ID=WCQ97883.1;Name=IS481;Note=transposase;locus_tag=NQZ70_10681
+CP102233.1	digIS	mobile_genetic_element	259636	261231	154.6	-	.	ID=WCQ87533.1;Name=IS66;Note=transposase;locus_tag=NQZ70_00196

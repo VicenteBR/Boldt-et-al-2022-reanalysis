@@ -1,0 +1,13 @@
+##gff-version 3
+##sequence-region CP102233.1 1 14519861
+# Data source: CAS-TypeIU and CAS-TypeIA identification results
+# Date: 2026-01-05
+CP102233.1	MacSyFinder	protein_coding_gene	667394	670393	395.03	-	0	ID=cas3_TypeIU;Name=cas3;Note=mandatory;locus_tag=NQZ70_00502;Dbxref=Protein_ID:1_502
+CP102233.1	MacSyFinder	protein_coding_gene	670386	672077	256.32	-	0	ID=csb2_TypeIU;Name=csb2;Note=mandatory;locus_tag=NQZ70_00503;Dbxref=Protein_ID:1_503
+CP102233.1	MacSyFinder	protein_coding_gene	672077	673351	244.97	-	0	ID=csb1_TypeIU;Name=csb1;Note=mandatory;locus_tag=NQZ70_00504;Dbxref=Protein_ID:1_504
+CP102233.1	MacSyFinder	protein_coding_gene	14269488	14270117	68.73	+	0	ID=cas6_TypeIA;Name=cas6;Note=mandatory;locus_tag=NQZ70_10382;Dbxref=Protein_ID:1_10382
+CP102233.1	MacSyFinder	protein_coding_gene	14270117	14272579	281.10	+	0	ID=cas3_TypeI;Name=cas3;Note=accessory;locus_tag=NQZ70_10383;Dbxref=Protein_ID:1_10383
+CP102233.1	MacSyFinder	protein_coding_gene	14272564	14274117	250.38	+	0	ID=cas8a1a3_TypeIA;Name=cas8a1a3;Note=mandatory;locus_tag=NQZ70_10384;Dbxref=Protein_ID:1_10384
+CP102233.1	MacSyFinder	protein_coding_gene	14274121	14275134	164.55	+	0	ID=cas7_TypeI;Name=cas7;Note=accessory;locus_tag=NQZ70_10385;Dbxref=Protein_ID:1_10385
+CP102233.1	MacSyFinder	protein_coding_gene	14275131	14275805	85.08	+	0	ID=cas5a2_TypeIA;Name=cas5a2;Note=mandatory;locus_tag=NQZ70_10386;Dbxref=Protein_ID:1_10386
+CP102233.1	MacSyFinder	protein_coding_gene	14276909	14277205	36.52	+	0	ID=cas2_TypeI-II-III;Name=cas2;Note=accessory;locus_tag=NQZ70_10387;Dbxref=Protein_ID:1_10387
