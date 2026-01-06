@@ -1,16 +1,39 @@
-# React + Vite
+**RNA-Seq Dynamic Browser: Boldt et al. 2022 Reanalysis
+**
+An interactive web-based platform for the reanalysis of the _Sorangium_ sp. So ce836 transcriptomic landscape, based on Boldt et al. (2022) (https://enviromicro-journals.onlinelibrary.wiley.com/doi/10.1111/1751-7915.14246). 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project reanalyzes raw RNA-Seq data to:
+- Detect and quantify defense system activity during the growth curve
+- Analyze transcriptome-wide potential antisense regulation in _Sorangium_ sp. So ce836
+- Track expression shifts across experimental timepoints in log_2(TPM + 1) units.
+**Access the live browser here: https://VicenteBR.github.io/Boldt-et-al-2022-reanalysis/**
 
-Currently, two official plugins are available:
+Dual Precomputed Loaders: 
+- Reanalysis: Loads global sense/antisense counts and full annotation.
+- Defense Systems: Focuses exclusively on the expression profiles of Padloc detected defense systems.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Data Format Requirements**
+To use the manual upload feature, ensure your files follow these schemas:
 
-## React Compiler
+1. Count Files (.tsv)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The first 6 columns must follow the featureCounts standard:
+| Geneid | Chr | Start | End | Strand | Length | Condition_Rep1 | Condition_Rep2 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| geneA | 1 | 100 | 500 | + | 400 | 120 | 145 |
 
-## Expanding the ESLint configuration
+2. Annotation Files (.gff3)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The parser extracts metadata from Column 9. For better reproducibility, include:
+
+locus_tag= or ID= for gene mapping.
+
+Name= for common gene symbols (e.g., GajA).
+
+Note=system:NAME for defense system categorization.
+
+License
+
+This project is intended for research and educational purposes. Data sourced from Boldt et al. (2022). See the original publication for primary data usage rights.
+
+Contact: vicente.gomes.filho@gmail.com
