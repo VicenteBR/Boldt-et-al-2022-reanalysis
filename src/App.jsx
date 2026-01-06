@@ -31,10 +31,18 @@ const CustomTooltip = ({ active, payload, label, annotations }) => {
   if (!active || !payload || !payload.length) return null;
 
   try {
+    // 1. Filter out range/area items - only show the lines (means)
+    const filteredPayload = payload.filter(item => item.dataKey && item.dataKey.includes('_mean'));
+    
+    if (filteredPayload.length === 0) return null;
+
+    // 2. Group payload by Gene ID
     const grouped = {};
-    payload.forEach(item => {
-      if (!item || !item.name) return;
-      const geneId = item.name.split(' (')[0];
+    filteredPayload.forEach(item => {
+      // Extract the base Gene ID (removes _S or _A and (D1)/(D2) suffixes)
+      const rawKey = item.dataKey.replace('_mean', '');
+      const geneId = rawKey.split('_')[0];
+      
       if (!grouped[geneId]) grouped[geneId] = [];
       grouped[geneId].push(item);
     });
@@ -55,11 +63,15 @@ const CustomTooltip = ({ active, payload, label, annotations }) => {
                 </div>
                 <div className="space-y-1 pl-4">
                   {items.map((item, idx) => {
-                    const itemName = item?.name || "";
-                    const isD1 = itemName.includes('D1') || itemName.includes('Sense') || (!itemName.includes('D2') && !itemName.includes('Antisense'));
+                    const key = item.dataKey;
+                    // Determine Dataset Label strictly from the key suffix
+                    const labelStr = key.includes('_S_mean') ? 'Dataset 1' : 
+                                    key.includes('_A_mean') ? 'Dataset 2' : 
+                                    'Expression';
+                                    
                     return (
                       <div key={idx} className="text-[11px] font-medium text-slate-500 flex justify-between gap-4">
-                        <span>{isD1 ? 'Dataset 1' : 'Dataset 2'}:</span>
+                        <span>{labelStr}:</span>
                         <span className="font-mono font-bold text-slate-700">
                           {typeof item?.value === 'number' && !isNaN(item.value) ? item.value.toFixed(2) : 'N/A'}
                         </span>
@@ -240,14 +252,15 @@ const App = () => {
               const tpmStd = Math.sqrt(tpmVals.map(x => Math.pow(x - tpmMean, 2)).reduce((a, b) => a + b, 0) / tpmVals.length);
               entry.genes[geneId][m] = { tpmMean, tpmStd, countMean: countVals.length > 0 ? countVals.reduce((a, b) => a + b, 0) / countVals.length : 0 };
               
-              // FIX: Ensure iterating over strands doesn't overwrite shared keys in Dataset 1 vs Dataset 2 modes
               if (currentMode === 'both') {
                 const suffix = m === 'sense' ? 'S' : 'A';
                 entry[`${geneId}_${suffix}_mean`] = tpmMean;
                 entry[`${geneId}_${suffix}_range`] = [Math.max(0, tpmMean - tpmStd), tpmMean + tpmStd];
               } else if (currentMode === m) {
-                entry[`${geneId}_mean`] = tpmMean;
-                entry[`${geneId}_range`] = [Math.max(0, tpmMean - tpmStd), tpmMean + tpmStd];
+                // We keep a suffix even in single mode internally to assist tooltip identification
+                const suffix = m === 'sense' ? 'S' : 'A';
+                entry[`${geneId}_${suffix}_mean`] = tpmMean;
+                entry[`${geneId}_${suffix}_range`] = [Math.max(0, tpmMean - tpmStd), tpmMean + tpmStd];
               }
             }
           }
@@ -461,11 +474,11 @@ const App = () => {
                       <Tooltip content={<CustomTooltip annotations={annotations} />} isAnimationActive={false} />
                       {selectedGenes.flatMap((gene, i) => {
                         const c = colors[i % colors.length];
-                        const keys = currentMode === 'both' ? [`${gene}_S`, `${gene}_A`] : [gene];
+                        const keys = currentMode === 'both' ? [`${gene}_S`, `${gene}_A`] : (currentMode === 'sense' ? [`${gene}_S`] : [`${gene}_A`]);
                         return keys.map((k, j) => (
                           <React.Fragment key={`${k}_${currentMode}_${j}`}>
                             <Area dataKey={`${k}_range`} stroke="none" fill={c} fillOpacity={j===0?0.15:0.05} connectNulls activeDot={false}/>
-                            <Line dataKey={`${k}_mean`} name={currentMode === 'both' ? (j === 0 ? `${gene} (D1)` : `${gene} (D2)`) : gene} stroke={c} strokeWidth={j===0?3:2} strokeDasharray={j===1?"5 5":""} dot={{r:3, strokeWidth: 2, fill: j===0?c:'#fff'}} connectNulls />
+                            <Line dataKey={`${k}_mean`} name={k} stroke={c} strokeWidth={j===0?3:2} strokeDasharray={key.includes('_A')?"5 5":""} dot={{r:3, strokeWidth: 2, fill: key.includes('_S')?c:'#fff'}} connectNulls />
                           </React.Fragment>
                         ));
                       })}
