@@ -11,8 +11,8 @@ const REMOTE_CONFIG = {
   branch: "main",
   folder: "DATA",
   files: {
-    sense: "/counts_diffexpress/sense_read_counts",
-    antisense: "/counts_diffexpress/antisense_read_counts",
+    sense: "/counts_diffexpress/all_genes/sense_read_counts",
+    antisense: "/counts_diffexpress/all_genes/antisense_read_counts",
     annotation: "/annotation_files/CP102233_annotation.gff3"
   }
 };
@@ -254,7 +254,7 @@ const App = () => {
               onClick={loadPrecomputedData}
               className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-all shadow-md text-sm font-bold animate-pulse hover:animate-none"
             >
-              <Database size={16} /> Load Reanalysis Dataset
+              <Database size={16} /> All genes - sense / antisense
             </button>
           )}
 
