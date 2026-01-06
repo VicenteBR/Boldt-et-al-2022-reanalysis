@@ -22,7 +22,7 @@ const REMOTE_CONFIG = {
     folder: "DATA",
     files: {
       sense: "/counts_diffexpress/defense_systems/defense_read_counts",
-      annotation: "/annotation_files/CP102233_padloc.gff3"
+      annotation: "/annotation_files/CP102233_padloc.gff"
     }
   }
 };
