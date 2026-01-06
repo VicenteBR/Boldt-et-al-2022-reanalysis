@@ -1,5 +1,5 @@
-**RNA-Seq Dynamic Browser: Boldt et al. 2022 Reanalysis
-**
+**RNA-Seq Dynamic Browser: Boldt et al. 2022 Reanalysis**
+
 An interactive web-based platform for the reanalysis of the _Sorangium_ sp. So ce836 transcriptomic landscape, based on Boldt et al. (2022) (https://enviromicro-journals.onlinelibrary.wiley.com/doi/10.1111/1751-7915.14246). 
 
 This project reanalyzes raw RNA-Seq data to:
