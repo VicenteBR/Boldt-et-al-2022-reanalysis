@@ -12,7 +12,7 @@ const REMOTE_CONFIG = {
     files: {
       sense: "/counts_diffexpress/all_genes/sense_read_counts",
       antisense: "/counts_diffexpress/all_genes/antisense_read_counts",
-      annotation: "/annotation_files/CP102233_padloc.gff3"
+      annotation: "/annotation_files/CP102233_annotation.gff3"
     }
   },
   defense: {
