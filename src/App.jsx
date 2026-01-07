@@ -6,7 +6,7 @@ import { Search, Trash2, BarChart2, Info, FileText, Loader2, FileCode, ExternalL
 const REMOTE_CONFIG = {
   reanalysis: {
     username: "VicenteBR", 
-    repo: "Boldt-et-al-2022-reanalysis",
+    repo: "Boldt-et-al-2023-reanalysis",
     branch: "main",
     folder: "DATA",
     files: {
@@ -17,7 +17,7 @@ const REMOTE_CONFIG = {
   },
   defense: {
     username: "VicenteBR", 
-    repo: "Boldt-et-al-2022-reanalysis",
+    repo: "Boldt-et-al-2023-reanalysis",
     branch: "main",
     folder: "DATA",
     files: {
