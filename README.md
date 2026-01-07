@@ -37,7 +37,7 @@ Note=system:NAME for defense system categorization.
 
 _License_
 
-This project is intended for research and educational purposes. Data sourced from Boldt et al. (2022). See the original publication for primary data usage rights.
+This project is intended for research and educational purposes. Data sourced from Boldt et al. (2023). See the original publication (https://enviromicro-journals.onlinelibrary.wiley.com/doi/10.1111/1751-7915.14246) for primary data usage rights.
 
 
 **Contact:** vicente.gomes.filho@gmail.com
